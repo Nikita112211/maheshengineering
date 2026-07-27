@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Products | Mahesh Engineering Works</title>
+<link rel="stylesheet" href="products.css">
+
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo-area">
+    <img src="images/mahesh logo.png" class="logo-img">
+    <div class="logo-text">
+      <h1>MAHESH ENGINEERING WORKS</h1>
+      <p>Steel Structures | PEB Solutions | Fabrication & Erection</p>
+    </div>
+  </div>
+
+  <nav class="nav-menu">
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT US</a>
+    <a href="products.html" class="active">OUR PRODUCTS</a>
+    <a href="contact.html">CONTACT US</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Our Products & Services</h1>
+  <p>Complete Industrial Steel Building Solutions</p>
+</section>
+
+<section class="products" id="products-container">
+<!-- Cards are generated automatically from products-data.js -->
+</section>
+
+<footer>
+  <p>&copy; 2026 Mahesh Engineering Works</p>
+</footer>
+
+<script src="products-data.js"></script>
+<script>
+  const container = document.getElementById("products-container");
+
+  PRODUCTS.forEach(product => {
+    const card = document.createElement("a");
+    card.href = "product.html?id=" + product.id;
+    card.className = "card";
+
+    card.innerHTML = `
+      <img src="${product.image}" alt="${product.title}">
+      <h3>${product.title}</h3>
+      <p>${product.shortDesc}</p>
+    `;
+
+    container.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
